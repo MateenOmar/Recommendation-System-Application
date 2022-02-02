@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommender</title>
+</head>
+
+<body>
+    <form action="/signIn" method="post">
+        <button>Change User</button>
+    </form>
+
+    <form action="/homePage" method="post">
+        <button>Home</button>
+    </form>
+
+    <h5>Logged in as User {{userID}}</h5>
+
+    <h1>Movie Recommender</h1>
+
+    <h2>Movies List</h2>
+    <form action="/movies" method="post">
+        <button>Movies List</button>
+    </form>
+
+    <h2>User Info</h2>
+    <form action="/info" method="post">
+        <button>Get Info</button>
+    </form>
+
+    <h2>Get Average Movie Rating</h2>
+    <form action="/movieRating" method="post">
+        <label for="movieNameR">Movie Name:</label><br />
+        <input type="text" id="movieNameR" name="movieNameR" placeholder="Toy Story" /><br />
+        <label for="movieYearR">Movie Year:</label><br />
+        <input type="number" id="movieYearR" name="movieYearR" placeholder="1995" />
+        <button>Get Rating</button>
+    </form>
+
+    <h2>Recommend Movies Similar to</h2>
+    <form action="/recommendMovie" method="post">
+        <label for="movieName">Movie Name:</label><br />
+        <input type="text" id="movieName" name="movieName" placeholder="Toy Story" /><br />
+        <label for="movieYear">Movie Year:</label><br />
+        <input type="number" id="movieYear" name="movieYear" placeholder="1995" />
+        <button>Recommend</button>
+    </form>
+
+    <h2>Recommend Movies Similar to Your Favourite Genres</h2>
+    <form action="/recommendGenre" method="post">
+        <button>Recommend</button>
+    </form>
+</body>
+
+</html>

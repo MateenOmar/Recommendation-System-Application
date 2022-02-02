@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User {{userID}} Info</title>
+</head>
+
+<body>
+    <form action="/signIn" method="post">
+        <button>Change User</button>
+    </form>
+    
+    <form action="/homePage" method="post">
+        <button>Home</button>
+    </form>
+
+    <h5>Logged in as User {{userID}}</h5>
+    
+    <h1>User {{userID}} Info</h1>
+
+    <h2>Watched Movies</h2>
+    <table>
+        <tr>
+            <th>Movie</th>
+            <th>Year</th>
+            <th>Rating</th>
+        </tr>
+        {% for movie in movies %}
+        <tr>
+    
+            <td>{{movie}}</td>
+            <td>{{movie.split(' ')[-1].strip('()')}}</td>
+            <td>{{movies[movie]}}</td>
+    
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Favourite Genres</h2>
+    <table>
+        {% for genre in favGenres %}
+            <tr>
+                
+                <td>{{genre}}</td>
+                
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Rated Genres</h2>
+    <table>
+        <tr>
+            <th>Genre</th>
+            <th>Rating</th>
+        </tr>
+        {% for genre in ratedGenres %}
+            <tr>
+                <td>{{genre}}</td>
+                <td>{{ratedGenres[genre]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Compare Movie Rating to Another User</h2>
+    <form action="/similarityRating" method="post">
+        <label for="user2ID">Second Users ID:</label><br />
+        <input type="text" id="user2ID" name="user2ID" placeholder="(1-4500)" /><br />
+        <label for="movieName">Movie Name:</label><br />
+        <input type="text" id="movieName" name="movieName" placeholder="Toy Story" /><br />
+        <label for="movieYear">Movie Year:</label><br />
+        <input type="number" id="movieYear" name="movieYear" placeholder="1995" />
+        <button>Compare Similarity</button>
+    </form>
+
+</body>
+
+</html>

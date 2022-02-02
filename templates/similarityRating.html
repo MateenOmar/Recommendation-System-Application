@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User {{userID}} Similarity</title>
+</head>
+
+<body>
+    <form action="/signIn" method="post">
+        <button>Change User</button>
+    </form>
+
+    <form action="/homePage" method="post">
+        <button>Home</button>
+    </form>
+
+    <h5>Logged in as User {{userID}}</h5>
+
+    <h1>Similarity between {{userID}} and {{user2ID}} for {{movie}} {{year}}</h1>
+    <h3>The similarity rating is {{similarity}}</h3>
+    
+    <table>
+        {% for movie in movies %}
+        <tr>
+
+            <td>{{movie}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
